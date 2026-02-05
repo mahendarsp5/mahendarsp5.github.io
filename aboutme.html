@@ -1,416 +1,385 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mahendar Boini - DevSecOps Engineer</title>
-    <meta name="description" content="Portfolio and Resume of Mahendar Boini - Senior DevSecOps Engineer specializing in AWS, Azure, and Automation.">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/aos.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahendar Boini | Senior DevSecOps Engineer</title>
+    <meta name="description" content="Portfolio of Mahendar Boini - Senior DevSecOps Engineer & Agile Coach based in Dubai.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
-        /* Custom Overrides for Professional Look */
-        .category { text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-        .experience-list { padding-left: 20px; margin-top: 10px; font-size: 0.95em; color: #555; }
-        .experience-list li { margin-bottom: 5px; }
-        .achievement-card { border: none; background: #f9f9f9; padding: 20px; border-radius: 8px; height: 100%; transition: transform 0.3s; }
-        .achievement-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); background: #fff; }
-        .achievement-icon { font-size: 2rem; color: #378C3F; margin-bottom: 15px; }
-        .cert-badge { background-color: #e9ecef; border-radius: 4px; padding: 5px 10px; font-size: 0.85rem; color: #333; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
+        :root {
+            --primary: #0a192f; /* Deep Navy */
+            --secondary: #64ffda; /* Tech Green */
+            --text-light: #8892b0;
+            --text-white: #e6f1ff;
+            --card-bg: #112240;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            color: var(--text-white);
+            font-weight: 700;
+        }
+        
+        .text-highlight { color: var(--secondary); }
+        .mono-font { font-family: 'Roboto Mono', monospace; font-size: 0.9rem; }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+        .navbar-brand { color: var(--secondary) !important; font-weight: 700; letter-spacing: 1px; }
+        .nav-link { color: var(--text-white) !important; margin-left: 1.5rem; font-size: 0.9rem; }
+        .nav-link:hover { color: var(--secondary) !important; }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        .hero-subtitle { color: var(--secondary); font-family: 'Roboto Mono', monospace; margin-bottom: 1rem; }
+        .hero-title { font-size: 4rem; line-height: 1.1; margin-bottom: 10px; }
+        .hero-desc { max-width: 600px; margin-top: 20px; font-size: 1.1rem; }
+        
+        .btn-custom {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+            padding: 12px 28px;
+            font-family: 'Roboto Mono', monospace;
+            border-radius: 4px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        .btn-custom:hover { background: rgba(100, 255, 218, 0.1); color: var(--secondary); }
+
+        /* Sections */
+        .section-padding { padding: 100px 0; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: #233554;
+            margin-left: 20px;
+        }
+
+        /* Metric Cards */
+        .metric-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            height: 100%;
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .metric-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
+        .metric-value { font-size: 2.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 0.5rem; }
+        .metric-label { font-size: 0.9rem; font-weight: 600; color: var(--text-white); }
+        
+        /* Experience Timeline */
+        .exp-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+        .exp-role { font-size: 1.3rem; color: var(--text-white); }
+        .exp-company { color: var(--secondary); font-family: 'Roboto Mono', monospace; font-size: 1rem; }
+        .exp-date { font-size: 0.85rem; margin-bottom: 1rem; display: block; }
+        .exp-list { padding-left: 1.2rem; }
+        .exp-list li { margin-bottom: 10px; position: relative; list-style: none; }
+        .exp-list li::before {
+            content: "▹";
+            color: var(--secondary);
+            position: absolute;
+            left: -1.2rem;
+        }
+
+        /* Skills */
+        .skill-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0 10px 10px 0;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .cert-icon { color: var(--secondary); margin-right: 15px; font-size: 1.2rem; }
+
+        /* Contact */
+        .contact-box { text-align: center; max-width: 600px; margin: 0 auto; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-title::after { width: 100px; }
+        }
     </style>
-  </head>
-  <body id="top">
-    <header>
-      <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-          <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">MAHENDAR BOINI</a>
-              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#achievements">Impact</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="page-content">
-      <div>
-<div class="profile-page">
-  <div class="wrapper">
-    <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg');"></div>
-      <div class="container">
-        <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="images/mahendar.jfif" alt="Mahendar Boini"/></a></div>
-          <div class="h2 title">Mahendar Boini</div>
-          <p class="category text-white">Senior DevSecOps Engineer | Cloud Architect | Automation Specialist</p>
-          <a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contact Me</a>
-          <a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor"><i class="fa fa-download"></i> Download CV</a>
-        </div>
-      </div>
-      <div class="section">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
         <div class="container">
-          <div class="button-container">
-              <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-              <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="GitHub"><i class="fa fa-github"></i></a>
-              <a class="btn btn-default btn-round btn-lg btn-icon" href="mailto:mahi4build@gmail.com" rel="tooltip" title="Email Me"><i class="fa fa-envelope"></i></a>
-          </div>
+            <a class="navbar-brand" href="#">MB.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="fa fa-bars" style="color: var(--secondary);"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </nav>
 
-<div class="section" id="about">
-  <div class="container">
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">Professional Profile</div>
-            <p>DevSecOps Engineer with <strong>12.5+ years</strong> of enterprise delivery experience, including nearly 7 years in aviation IT at Flydubai. I specialize in CI/CD transformation, cloud modernization, infrastructure automation, and security governance for enterprise airline systems.</p>
-            <p>I am a <strong>Certified SAFe® 6 Agilist</strong> and <strong>AWS Certified SysOps Administrator</strong> proficient in Azure DevOps, Jenkins, and driving DevSecOps adoption. I have a proven track record of reducing deployment support effort by 70% and achieving 80% faster Disaster Recovery timelines.</p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Location:</strong></div>
-              <div class="col-sm-8">Dubai, UAE</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">mahi4build@gmail.com</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+971-501027451</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Exp:</strong></div>
-              <div class="col-sm-8">12.5+ Years</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Languages:</strong></div>
-              <div class="col-sm-8">English, Telugu, Hindi</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="skill">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Technical Expertise</div>
-    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">AWS Cloud (EC2, ASG, RDS, S3)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div><span class="progress-value">90%</span>
-              </div>
-            </div>
-            <div class="progress-container progress-primary"><span class="progress-badge">Azure DevOps (VSO) & CI/CD</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div><span class="progress-value">95%</span>
-              </div>
-            </div>
-             <div class="progress-container progress-primary"><span class="progress-badge">DevSecOps (Checkmarx, SonarQube)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">IaC (CloudFormation)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
-              </div>
-            </div>
-            <div class="progress-container progress-primary"><span class="progress-badge">Scripting (PowerShell, Bash)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
-              </div>
-            </div>
-            <div class="progress-container progress-primary"><span class="progress-badge">Containerization (Docker)</span>
-              <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div><span class="progress-value">75%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-12 text-center">
-                <span class="cert-badge">Jenkins</span>
-                <span class="cert-badge">YAML Pipelines</span>
-                <span class="cert-badge">Git Branching</span>
-                <span class="cert-badge">Maven/Ant/NPM</span>
-                <span class="cert-badge">IIS & Tomcat</span>
-                <span class="cert-badge">Splunk</span>
-                <span class="cert-badge">AppDynamics</span>
-                <span class="cert-badge">Linux Administration</span>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="achievements">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 ml-auto mr-auto">
-        <div class="h4 text-center mb-4 title">Strategic Achievements</div>
-        <p class="text-center text-muted mb-5">Key milestones delivered at Flydubai & Enterprise Environments</p>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="achievement-card text-center">
-                <i class="fa fa-tachometer achievement-icon"></i>
-                <h5>80% Faster DR</h5>
-                <p>Reduced Disaster Recovery rebuild time from 3 hours to 15 minutes through complete automation.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="achievement-card text-center">
-                <i class="fa fa-users achievement-icon"></i>
-                <h5>70% Less Effort</h5>
-                <p>Reduced deployment support effort by 70% via CI/CD automation, enabling single-click releases.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="achievement-card text-center">
-                <i class="fa fa-shield achievement-icon"></i>
-                <h5>Security Governance</h5>
-                <p>Established Scan Gating across 90% of business workloads using Checkmarx & SonarQube.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up">
-            <div class="achievement-card text-center">
-                <i class="fa fa-server achievement-icon"></i>
-                <h5>Mass Automation</h5>
-                <p>Automated management of 240+ services across 102 servers, streamlining release cutovers.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="achievement-card text-center">
-                <i class="fa fa-cloud achievement-icon"></i>
-                <h5>Zero Downtime</h5>
-                <p>Implemented blue/green and rolling deployment patterns for high-availability airline systems.</p>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="achievement-card text-center">
-                <i class="fa fa-database achievement-icon"></i>
-                <h5>DB Automation</h5>
-                <p>Automated database pipeline deployments, creating end-to-end audit trails and eliminating error.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="experience">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Work Experience</div>
-    
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>Mar 2019 - Present</p>
-            <div class="h5">FLYDUBAI</div>
-            <p>Dubai / Hyderabad</p>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">DevSecOps Engineer</div>
-            <p>Managing enterprise releases, automation, cloud platforms, and security governance across 90% of business workloads covering revenue booking, cargo, DCS, and ERP.</p>
-            <ul class="experience-list">
-                <li>Designed CI/CD pipelines across multi-env lifecycle including governance enforcement.</li>
-                <li>Mentored Dev, QA and Infra teams on pipeline empowerment and Git branching strategies.</li>
-                <li>Executed high-risk COVID operational rollouts and emergency patches with zero vendor support.</li>
-                <li>Built DR automation reducing rebuild times from hours to minutes.</li>
-                <li>Provisioned AWS environments via CloudFormation and administered IIS/Tomcat ecosystems.</li>
-                <li>Owned weekly vulnerability remediation cycles and compliance reporting.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>May 2013 – Mar 2019</p>
-            <div class="h5">STERLYN IT</div>
-            <p>Hyderabad, India</p>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Software Engineer</div>
-            <p>Client engagements included Wipro Limited and PCS Technology Limited. Delivered CI/CD implementations and cloud infrastructure support.</p>
-            <ul class="experience-list">
-                <li>Developed Jenkins CI pipelines for monolithic and distributed systems.</li>
-                <li>Provisioned AWS EC2, VPC and IAM user policies.</li>
-                <li>Built automation scripts for packaging and deployments (IIS/Tomcat).</li>
-                <li>Managed Docker image creation and registry integration.</li>
-                <li>Provided production support for enterprise clients and performed system patching.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="section" id="education">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education & Certifications</div>
-    
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-education-header">
-            <p>2012</p>
-            <div class="h5">Master's Degree</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Master of Computer Applications (MCA)</div>
-            <p class="category">Kakatiya University</p>
-            <p>Specialized in Computer Science, Software Engineering principles, and Database Management Systems.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-        <div class="row">
-          <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body cc-education-header">
-              <div class="h5">Certifications</div>
-            </div>
-          </div>
-          <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-            <div class="card-body">
-              <div class="h5">Professional Credentials</div>
-              <ul>
-                  <li><strong>AWS Certified SysOps Administrator – Associate</strong> (Valid until Jan 2027)</li>
-                  <li><strong>Certified SAFe® 6 Agilist</strong> (Scaled Agile Framework)</li>
-                  <li><strong>Flydubai Champion Award</strong> – Recognized for DR Automation Excellence</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  </div>
-</div>
-
-<div class="section" id="contact">
-  <div class="cc-contact-information" style="background-image: url('images/staticmap.png');">
-    <div class="container">
-      <div class="cc-contact">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card mb-0" data-aos="zoom-in">
-              <div class="h4 text-center title">Contact Me</div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <form action="mailto:mahi4build@gmail.com" method="POST" enctype="text/plain">
-                      <div class="p pb-3"><strong>Open for opportunities in UAE</strong></div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="email" placeholder="E-mail" required="required"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <button class="btn btn-primary" type="submit">Send Message</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+    <section class="hero-section container" id="home">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
+                <p class="hero-subtitle">Hi, my name is</p>
+                <h1 class="hero-title">Mahendar Boini.</h1>
+                <h2 class="hero-title" style="color: var(--text-light); font-size: 3rem;">I build self-healing infrastructure.</h2>
+                <p class="hero-desc">
+                    Senior DevSecOps Engineer & Agile Coach based in <strong>Dubai</strong>. I specialize in bridging the gap between development and operations, automating high-availability pipelines for enterprise airline systems.
+                </p>
+                <div class="mt-4">
+                    <a href="#contact" class="btn-custom">Get In Touch</a>
+                    <a href="#" class="btn-custom ms-3"><i class="fas fa-download me-2"></i>Download Resume</a>
                 </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <p class="mb-0"><strong>Location</strong></p>
-                    <p class="pb-2">Dubai, UAE</p>
-                    <p class="mb-0"><strong>Mobile</strong></p>
-                    <p class="pb-2">+971-501027451</p>
-                    <p class="mb-0"><strong>Email</strong></p>
-                    <p>mahi4build@gmail.com</p>
-                    <p class="mb-0"><strong>Declaration</strong></p>
-                    <p class="small text-muted">I hereby declare that the above information is accurate and true to the best of my knowledge.</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="col-lg-4 text-center d-none d-lg-block" data-aos="fade-left" data-aos-duration="1500">
+                <div style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; border: 3px solid var(--secondary); margin: 0 auto; position: relative;">
+                    <img src="profile.jpg" alt="Mahendar Boini" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: 0.3s;" onmouseover="this.style.filter='none'" onmouseout="this.style.filter='grayscale(20%)'">
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div></div>
-    </div>
-    <footer class="footer">
-      <div class="container text-center"><a class="cc-linkedin btn btn-link" href="#"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a><a class="cc-github btn btn-link " href="#"><i class="fa fa-github fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="mailto:mahi4build@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center">Mahendar Boini</div>
-      <div class="text-center text-muted">
-        <p>&copy; Mahendar Boini. All rights reserved.</p>
-      </div>
+    </section>
+
+    <section id="impact" class="section-padding container">
+        <h2 class="section-title text-highlight" data-aos="fade-right"><span class="mono-font text-highlight me-2">01.</span> Strategic Impact</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="metric-card text-center">
+                    <i class="fas fa-stopwatch fa-2x mb-3 text-white"></i>
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Faster Recovery (DR)</div>
+                    <p class="small mt-2">Reduced build time from 3hrs to 15mins.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="metric-card text-center">
+                    <i class="fas fa-rocket fa-2x mb-3 text-white"></i>
+                    <div class="metric-value">70%</div>
+                    <div class="metric-label">Efficiency Gain</div>
+                    <p class="small mt-2">Transformed manual releases to "One-Click".</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="metric-card text-center">
+                    <i class="fas fa-server fa-2x mb-3 text-white"></i>
+                    <div class="metric-value">240+</div>
+                    <div class="metric-label">Services Automated</div>
+                    <p class="small mt-2">Mass start/stop orchestration across 102 servers.</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="metric-card text-center">
+                    <i class="fas fa-shield-alt fa-2x mb-3 text-white"></i>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Secure Gates</div>
+                    <p class="small mt-2">Reduction in vulnerability carryover via SAST.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section-padding container">
+        <h2 class="section-title text-highlight" data-aos="fade-right"><span class="mono-font text-highlight me-2">02.</span> Where I've Worked</h2>
+        
+        <div class="row mt-5">
+            <div class="col-lg-10 mx-auto">
+                
+                <div class="exp-card" data-aos="fade-up">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h3 class="exp-role">Senior DevSecOps Engineer (P04)</h3>
+                        <span class="exp-company">@ Flydubai</span>
+                    </div>
+                    <span class="exp-date mono-font">March 2019 – Present | Dubai, UAE</span>
+                    <p class="mt-3 mb-3">Spearheading the DevSecOps transformation for Dubai’s leading airline, managing workloads across AWS, Azure DevOps, and OCI.</p>
+                    <ul class="exp-list">
+                        <li><strong>Enterprise Automation:</strong> Architected Azure DevOps & Jenkins pipelines for heterogeneous environments, implementing Blue/Green deployment patterns for zero downtime.</li>
+                        <li><strong>Cloud Infrastructure:</strong> Championed the "DR Code Sync Automation" initiative, utilizing CloudFormation and ASGs to optimize costs and resilience.</li>
+                        <li><strong>Security Governance:</strong> Integrated Checkmarx (SAST) and SonarQube quality gates, enforcing mandatory security checks before production.</li>
+                        <li><strong>Legacy Modernization:</strong> Automated the "impossible" DCS UI & Edifact build processes, overcoming massive legacy architectural debt.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h3 class="exp-role">Software Engineer / Build Engineer</h3>
+                        <span class="exp-company">@ Sterlyn IT (Clients: Wipro, PCS)</span>
+                    </div>
+                    <span class="exp-date mono-font">May 2013 – March 2019 | Hyderabad, India</span>
+                    <p class="mt-3 mb-3">Transitioned from a C#.NET Developer to Build Engineering, leveraging coding skills to automate infrastructure.</p>
+                    <ul class="exp-list">
+                        <li><strong>Developer Advantage:</strong> Leveraged background in C#.NET to write advanced automation scripts and troubleshoot deep-level application errors using Fiddler.</li>
+                        <li><strong>CI/CD Implementation:</strong> Built the first CI pipelines using Jenkins for monolithic .NET applications for Banking (Merchant Capture) clients.</li>
+                        <li><strong>Dockerization:</strong> Introduced Docker containerization to resolve development environment inconsistencies.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding container">
+        <h2 class="section-title text-highlight" data-aos="fade-right"><span class="mono-font text-highlight me-2">03.</span> Tech Stack</h2>
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-right">
+                <h4 class="mb-4">Core Competencies</h4>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Azure DevOps (VSO) & CI/CD</span>
+                        <span class="text-secondary">Expert</span>
+                    </div>
+                    <div class="progress mt-1" style="height: 6px; background: #233554;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>AWS Cloud (SysOps)</span>
+                        <span class="text-secondary">Advanced</span>
+                    </div>
+                    <div class="progress mt-1" style="height: 6px; background: #233554;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>DevSecOps (Checkmarx/Sonar)</span>
+                        <span class="text-secondary">Advanced</span>
+                    </div>
+                    <div class="progress mt-1" style="height: 6px; background: #233554;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6" data-aos="fade-left">
+                <h4 class="mb-4">Tools & Technologies</h4>
+                <div>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">CloudFormation</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">PowerShell</span>
+                    <span class="skill-tag">Bash/Shell</span>
+                    <span class="skill-tag">C#.NET</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Splunk</span>
+                    <span class="skill-tag">AppDynamics</span>
+                    <span class="skill-tag">IIS / Tomcat</span>
+                    <span class="skill-tag">YAML Pipelines</span>
+                    <span class="skill-tag">Git Flow</span>
+                </div>
+
+                <h4 class="mb-3 mt-5">Education & Certifications</h4>
+                <div class="cert-item">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <div>
+                        <strong class="text-white d-block">AWS Certified SysOps Administrator – Associate</strong>
+                        <span class="mono-font text-secondary small">Valid until Jan 2027</span>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <div>
+                        <strong class="text-white d-block">Certified SAFe® 6 Agilist</strong>
+                        <span class="mono-font text-secondary small">Scaled Agile Framework</span>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-graduation-cap cert-icon"></i>
+                    <div>
+                        <strong class="text-white d-block">Master of Computer Applications (MCA)</strong>
+                        <span class="mono-font text-secondary small">Kakatiya University (Distinction)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding container text-center">
+        <div class="contact-box" data-aos="zoom-in">
+            <p class="mono-font text-highlight">04. What's Next?</p>
+            <h2 class="mb-4" style="font-size: 3rem;">Get In Touch</h2>
+            <p class="mb-5 text-light">
+                I am currently open to opportunities in the UAE. Whether you have a question about my automation strategies or just want to say hi, my inbox is always open.
+            </p>
+            <a href="mailto:mahi4build@gmail.com" class="btn-custom" style="padding: 15px 30px; font-size: 1.1rem;">Say Hello</a>
+            
+            <div class="mt-5 d-flex justify-content-center gap-4">
+                <a href="#" class="text-secondary fs-4"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-secondary fs-4"><i class="fab fa-github"></i></a>
+                <a href="mailto:mahi4build@gmail.com" class="text-secondary fs-4"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+971501027451" class="text-secondary fs-4"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center pb-4 pt-5">
+        <p class="mono-font small text-secondary">Designed & Built by Mahendar Boini</p>
     </footer>
-    <script src="js/core/jquery.3.2.1.min.js"></script>
-    <script src="js/core/popper.min.js"></script>
-    <script src="js/core/bootstrap.min.js"></script>
-    <script src="js/now-ui-kit.js?v=1.1.0"></script>
-    <script src="js/aos.js"></script>
-    <script src="scripts/main.js"></script>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
 </html>
