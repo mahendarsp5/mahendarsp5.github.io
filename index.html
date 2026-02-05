@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coming Soon</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
 
-    body {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #6d40e8, #4facfe);
-        color: #333;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    .container {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        text-align: center;
-        max-width: 750px;
-        width: 90%;
-    }
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6d40e8,#4facfe);
+}
 
-    h1 {
-        font-size: 42px;
-        margin-bottom: 20px;
-        color: #6d40e8;
-    }
+.container{
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    text-align:center;
+    max-width:750px;
+    width:90%;
+}
 
-    p {
-        font-size: 18px;
-        margin: 15px 0;
-        line-height: 1.6;
-    }
+h1{
+    font-size:42px;
+    color:#6d40e8;
+    margin-bottom:20px;
+}
 
-    img.main-image {
-        width: 100%;
-        max-width: 650px;
-        border-radius: 12px;
-        margin: 25px 0;
-    }
+.main-image{
+    width:100%;
+    max-width:650px;
+    border-radius:12px;
+    margin:25px 0;
+}
 
-    .contact a {
-        color: #6d40e8;
-        font-weight: 600;
-        text-decoration: none;
-    }
+p{
+    font-size:18px;
+    margin:15px 0;
+    color:#444;
+}
 
-    .contact a:hover {
-        text-decoration: underline;
-    }
+.contact a{
+    color:#6d40e8;
+    font-weight:600;
+    text-decoration:none;
+}
 
-    .profile {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
+.contact a:hover{
+    text-decoration:underline;
+}
 
-    .profile img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
+/* Profile Section */
 
-    footer {
-        margin-top: 25px;
-        font-size: 14px;
-        color: #888;
-    }
+.profile{
+    margin-top:25px;
+}
 
-    /* Mobile Responsive */
-    @media (max-width: 600px) {
-        h1 {
-            font-size: 32px;
-        }
-        p {
-            font-size: 16px;
-        }
-    }
+.profile a{
+    display:inline-block;
+    text-decoration:none;
+    color:#333;
+}
+
+.profile img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #6d40e8;
+    transition:0.3s;
+}
+
+.profile img:hover{
+    transform:scale(1.08);
+}
+
+.profile span{
+    display:block;
+    margin-top:8px;
+    font-weight:500;
+}
+
+/* Footer */
+
+footer{
+    margin-top:25px;
+    font-size:14px;
+    color:#888;
+}
 
 </style>
 </head>
@@ -104,17 +111,21 @@
 
     <h1>🚀 Coming Soon</h1>
 
-    <img src="images/site-construction.jpg" alt="Site Under Construction" class="main-image">
+    <img src="images/site-construction.jpg" alt="Site Construction" class="main-image">
 
     <p>Sorry for the inconvenience. We're currently building something amazing.</p>
 
     <p class="contact">
-        Need help? <a href="mailto:mahendar.boini@gmail.com">Contact Us</a>
+        Need help? 
+        <a href="mailto:mahendar.boini@gmail.com">Contact Us</a>
     </p>
 
+    <!-- FB CLICKABLE PHOTO -->
     <div class="profile">
-        <img src="images/person_1.jpg" alt="Mahendar">
-        <span>— Mahendar Boini</span>
+        <a href="https://www.facebook.com/i.mahendarboini" target="_blank">
+            <img src="images/person_1.jpg" alt="Mahendar Boini">
+            <span>— Mahendar Boini</span>
+        </a>
     </div>
 
     <footer>
